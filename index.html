@@ -17,7 +17,7 @@
 
     <div class="w-full max-w-md bg-zinc-900 border border-zinc-800 rounded-3xl p-6 shadow-2xl space-y-6">
         
-        <!-- NAGŁÓWEK I OPIS NA GÓRZE -->
+        <!-- NAGŁÓWEK I OPIS -->
         <div class="text-center space-y-2">
             <div class="w-24 h-24 mx-auto mb-3 rounded-full border-2 border-emerald-400 p-1 flex items-center justify-center bg-zinc-950 shadow-lg shadow-emerald-500/20">
                 <span class="text-3xl font-black bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">TA</span>
@@ -39,33 +39,45 @@
             </button>
         </div>
 
-        <!-- ZAWARTOŚĆ ZAKŁADEK -->
-        
         <!-- 1. ZAKŁADKA: MINECRAFT -->
         <div id="tab-mc" class="tab-content hidden space-y-4">
-            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 text-center">
-                <h2 class="text-sm font-semibold text-emerald-400 mb-2">Minecraft GUI & Tools</h2>
-                <p class="text-xs text-zinc-400 mb-4">Miejsce na Twoje GUI, mechaniki redstone, systemy komend i Anarchia.gg.</p>
-                
-                <!-- TUTAJ MOŻESZ WSTAWIAĆ SWOJE ELEMENTY GUI -->
-                <div class="p-6 border border-dashed border-zinc-700 rounded-xl bg-zinc-900/50 text-xs text-zinc-500">
-                    [ TUTAJ WSTAW SWÓJ KOD / WIDŻET / GUI MINECRAFT ]
-                </div>
+            
+            <!-- OPIS OFERTY -->
+            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-2 text-left">
+                <h2 class="text-sm font-semibold text-emerald-400 flex items-center gap-1.5">
+                    ⚙️ Co oferuję w Minecraft?
+                </h2>
+                <ul class="text-xs text-zinc-300 space-y-1.5 list-disc list-inside">
+                    <li>Tworzenie zaawansowanych mechanizmów **Redstone**</li>
+                    <li>Systemy **Command Block** i scoreboardy</li>
+                    <li>Optymalizacja oraz mechaniki pod serwery survival/lifesteal</li>
+                    <li>Pisanie i konfiguracja skryptów oraz pluginów na zamówienie</li>
+                </ul>
+            </div>
+
+            <!-- PRZYCISKI SKRYPTÓW -->
+            <div class="space-y-2.5">
+                <a href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-semibold text-sm rounded-xl transition shadow-lg shadow-emerald-950/50">
+                    📜 Gotowe Skrypty (Pobierz)
+                </a>
+                <a href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-zinc-800 hover:bg-zinc-750 font-medium text-sm rounded-xl border border-zinc-700/50 transition">
+                    🛠️ Zamów Customowy Skrypt
+                </a>
+            </div>
+
+            <!-- MIEJSCE NA GUI / PREZENTACJĘ -->
+            <div class="p-4 border border-dashed border-zinc-800 rounded-2xl bg-zinc-950/50 text-center">
+                <p class="text-xs text-zinc-500">[ TUTAJ MOŻESZ WSTAWIC SWÓJ PODGLĄD GUI ]</p>
             </div>
         </div>
 
         <!-- 2. ZAKŁADKA: GŁÓWNA -->
         <div id="tab-main" class="tab-content space-y-4">
             
-            <!-- PASEK CELU -->
-            <div class="bg-zinc-950 p-4 rounded-2xl border border-zinc-800 space-y-2">
-                <div class="flex justify-between text-xs font-medium">
-                    <span class="text-zinc-300">Cel: Zestaw Komputerowy</span>
-                    <span class="text-emerald-400 font-bold">0 / 25 000 PLN</span>
-                </div>
-                <div class="w-full bg-zinc-800 rounded-full h-2.5 overflow-hidden">
-                    <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-[0%] rounded-full"></div>
-                </div>
+            <!-- WIDŻET CELU (TIPPLY / ZEWNĘTRZNY) -->
+            <div class="bg-zinc-950 p-2 rounded-2xl border border-zinc-800 text-center">
+                <!-- Podmień 'src' na link do widżetu Tipply -->
+                <iframe src="https://tipply.pl/widget/goal/TWOJ_ID_WIDZETU" class="w-full h-32 border-0 rounded-xl bg-zinc-900" loading="lazy"></iframe>
             </div>
 
             <!-- LINKI SPOŁECZNOŚCIOWE -->
@@ -77,26 +89,24 @@
                     📱 TikTok Profile
                 </a>
                 <a href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-semibold text-sm rounded-xl transition shadow-lg shadow-emerald-950/50">
-                    💬 Discord / Handel Anarchia.gg
+                    💬 Dołącz do Discorda
                 </a>
             </div>
 
-            <!-- MIEJSCE NA WIDŻETY YT & TT -->
-            <div class="space-y-3 pt-2">
-                <!-- WIDŻET YOUTUBE -->
-                <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800">
-                    <p class="text-xs text-zinc-400 mb-2 font-medium">Najnowszy film YouTube:</p>
-                    <div class="w-full h-40 border border-dashed border-zinc-700 rounded-xl flex items-center justify-center text-xs text-zinc-500">
-                        [ MIEJSCE NA EMBED / WIDŻET YOUTUBE ]
-                    </div>
+            <!-- WIDŻET YOUTUBE -->
+            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-2">
+                <p class="text-xs text-zinc-400 font-medium">Najnowszy film YouTube:</p>
+                <div class="w-full aspect-video rounded-xl overflow-hidden border border-zinc-800">
+                    <!-- Podmień ID playlisty na własną (UU...) -->
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/videoseries?list=UU_TWOJ_ID_KANALU" title="Najnowszy film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+            </div>
 
-                <!-- WIDŻET TIKTOK -->
-                <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800">
-                    <p class="text-xs text-zinc-400 mb-2 font-medium">Najnowszy TikTok / Short:</p>
-                    <div class="w-full h-40 border border-dashed border-zinc-700 rounded-xl flex items-center justify-center text-xs text-zinc-500">
-                        [ MIEJSCE NA EMBED / WIDŻET TIKTOK ]
-                    </div>
+            <!-- WIDŻET TIKTOK -->
+            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-2">
+                <p class="text-xs text-zinc-400 font-medium">Najnowszy TikTok / Short:</p>
+                <div class="w-full h-32 border border-dashed border-zinc-800 rounded-xl flex items-center justify-center text-xs text-zinc-500">
+                    [ MIEJSCE NA EMBED TIKTOK ]
                 </div>
             </div>
         </div>
@@ -105,14 +115,14 @@
         <div id="tab-soon" class="tab-content hidden space-y-4">
             <div class="p-8 bg-zinc-950 rounded-2xl border border-zinc-800 text-center space-y-2">
                 <div class="text-3xl">🚀</div>
-                <h3 class="text-sm font-semibold text-zinc-200">Nowe funkcje w przygotowaniu</h3>
-                <p class="text-xs text-zinc-400">Ta sekcja zostanie uzupełniona niedługo!</p>
+                <h3 class="text-sm font-semibold text-zinc-200">Nowe projekty w przygotowaniu</h3>
+                <p class="text-xs text-zinc-400">Sekcja zostanie zaktualizowana niebawem.</p>
             </div>
         </div>
 
     </div>
 
-    <!-- SKRYPT DO PRZEŁĄCZANIA ZAKŁADEK -->
+    <!-- SKRYPT DO ZAKŁADEK -->
     <script>
         function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
