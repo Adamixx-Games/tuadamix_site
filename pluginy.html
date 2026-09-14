@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuAdamix | Gotowe Pluginy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-zinc-900 border border-zinc-800 rounded-3xl p-6 shadow-2xl space-y-6">
+        
+        <!-- NAGŁÓWEK -->
+        <div class="text-center space-y-2">
+            <div class="w-16 h-16 mx-auto mb-2 rounded-2xl border border-teal-500/30 bg-teal-950/40 flex items-center justify-center text-2xl shadow-lg shadow-teal-950/50">
+                🧩
+            </div>
+            <h1 class="text-2xl font-bold tracking-tight text-white">Gotowe Pluginy</h1>
+            <p class="text-zinc-400 text-xs">Darmowe i przetestowane pluginy Java na Twój serwer Minecraft!</p>
+        </div>
+
+        <!-- PRZYCISK POWROTU -->
+        <a href="/index.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-400 hover:text-teal-300 transition bg-zinc-950 px-3 py-2 rounded-xl border border-zinc-800 w-full justify-center">
+            ← Powrót do Strony Głównej
+        </a>
+
+        <!-- LISTA PLUGINÓW -->
+        <div class="space-y-4">
+            
+            <!-- PLUGIN 1: TA-HEALER -->
+            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-3 text-left">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-sm font-bold text-teal-400 flex items-center gap-1.5">
+                        ⚡ TA-Healer <span class="text-[10px] text-zinc-500 font-normal">v1.0</span>
+                    </h2>
+                    <span class="text-[10px] bg-teal-950 text-teal-300 px-2 py-0.5 rounded-full border border-teal-500/30 font-mono">1.16 - 1.20+</span>
+                </div>
+                
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                    Dodaje komendę uleczenia gracza oraz odnawia głód. Posiada wbudowany efekt cząsteczek (particles) i wiadomości w kolorach HEX.
+                </p>
+
+                <!-- SPECYFIKACJA KODU / KOMENDY -->
+                <div class="bg-zinc-900/80 p-2.5 rounded-xl border border-zinc-800/80 space-y-1 text-[11px] font-mono text-zinc-400">
+                    <p><span class="text-teal-400 font-semibold">Komendy:</span> /lecz, /heal</p>
+                    <p><span class="text-teal-400 font-semibold">Permisja:</span> ta.healer.use</p>
+                </div>
+                
+                <div class="pt-2 border-t border-zinc-900 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-500 font-medium">Autor: TuAdamix</span>
+                    <a href="#" download class="py-2 px-3 bg-teal-600 hover:bg-teal-500 font-bold text-xs text-white rounded-xl transition shadow-lg shadow-teal-950/50 flex items-center gap-1">
+                        📥 Pobierz .JAR
+                    </a>
+                </div>
+            </div>
+
+            <!-- MIEJSCE NA KOLEJNY PLUGIN (PLACEHOLDER) -->
+            <div class="p-4 bg-zinc-950/50 rounded-2xl border border-zinc-800/50 border-dashed text-center space-y-1">
+                <p class="text-xs text-zinc-500 font-medium">⚙️ Kolejny plugin w przygotowaniu...</p>
+                <p class="text-[10px] text-zinc-600">Zaglądaj regularnie lub zamów własny w zakładce zamówień!</p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER PODSTRONY -->
+        <div class="text-center pt-2">
+            <p class="text-[11px] text-zinc-600">TuAdamix Hub • Pluginy Spigot / Paper</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
