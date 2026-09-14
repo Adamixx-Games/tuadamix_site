@@ -28,10 +28,10 @@
 
         <!-- PRZYCISKI ZAKŁADEK -->
         <div class="grid grid-cols-3 gap-2 bg-zinc-950 p-1.5 rounded-2xl border border-zinc-800 text-xs font-semibold">
-            <button onclick="switchTab('mc')" id="btn-mc" class="tab-btn py-2.5 rounded-xl transition text-zinc-400 hover:text-white">
+            <button onclick="switchTab('mc')" id="btn-mc" class="tab-btn active py-2.5 rounded-xl transition text-zinc-400 hover:text-white">
                 Minecraft
             </button>
-            <button onclick="switchTab('main')" id="btn-main" class="tab-btn active py-2.5 rounded-xl transition text-zinc-400 hover:text-white">
+            <button onclick="switchTab('main')" id="btn-main" class="tab-btn py-2.5 rounded-xl transition text-zinc-400 hover:text-white">
                 Główna
             </button>
             <button onclick="switchTab('soon')" id="btn-soon" class="tab-btn py-2.5 rounded-xl transition text-zinc-400 hover:text-white">
@@ -39,8 +39,8 @@
             </button>
         </div>
 
-        <!-- 1. ZAKŁADKA: MINECRAFT -->
-        <div id="tab-mc" class="tab-content hidden space-y-4">
+        <!-- 1. ZAKŁADKA: MINECRAFT (FORMULARZ ZAMÓWIENIA) -->
+        <div id="tab-mc" class="tab-content space-y-4">
             
             <!-- OPIS OFERTY -->
             <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-2 text-left">
@@ -55,26 +55,42 @@
                 </ul>
             </div>
 
-            <!-- PRZYCISKI SKRYPTÓW -->
-            <div class="space-y-2.5">
-                <a href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-semibold text-sm rounded-xl transition shadow-lg shadow-emerald-950/50">
-                    📜 Gotowe Skrypty (Pobierz)
-                </a>
-                <a href="https://discord.gg/p6ZrDMKWaY" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-zinc-800 hover:bg-zinc-750 font-medium text-sm rounded-xl border border-zinc-700/50 transition">
-                    🛠️ Zamów Customowy Skrypt
-                </a>
+            <!-- FORMULARZ ZAMÓWIENIA -->
+            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-3 text-left">
+                <h3 class="text-xs font-bold text-zinc-300 uppercase tracking-wider">🛠️ Złóż zamówienie</h3>
+                
+                <form id="orderForm" class="space-y-3 text-xs">
+                    <div>
+                        <label class="block text-zinc-400 mb-1 font-medium">Twój kontakt (Discord / E-mail) *</label>
+                        <input type="text" id="contact" required placeholder="np. TwójNick#1234" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-zinc-400 mb-1 font-medium">Opis zamówienia *</label>
+                        <textarea id="description" required rows="3" placeholder="Opisz dokładnie co mam napisać lub zbudować..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500 resize-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-zinc-400 mb-1 font-medium">Proponowany budżet (opcjonalnie)</label>
+                        <input type="text" id="budget" placeholder="np. 15 PLN" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500">
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 font-bold text-white text-xs rounded-xl transition shadow-lg shadow-emerald-950/50">
+                        🚀 Wyślij Zamówienie
+                    </button>
+                    
+                    <div id="formStatus" class="text-xs text-center font-semibold hidden"></div>
+                </form>
             </div>
 
-            <!-- MIEJSCE NA GUI / PREZENTACJĘ -->
-            <div class="p-4 border border-dashed border-zinc-800 rounded-2xl bg-zinc-950/50 text-center">
-                <p class="text-xs text-zinc-500">[ TUTAJ MOŻESZ WSTAWIAĆ SWÓJ PODGLĄD GUI ]</p>
-            </div>
+            <!-- LINK DISCORD -->
+            <a href="https://discord.gg/p6ZrDMKWaY" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-zinc-800 hover:bg-zinc-750 font-semibold text-sm rounded-xl border border-zinc-700/50 transition">
+                💬 Dołącz do Discorda
+            </a>
         </div>
 
         <!-- 2. ZAKŁADKA: GŁÓWNA -->
-        <div id="tab-main" class="tab-content space-y-4">
-            
-            <!-- PRZYCISK WSPARCIA TIPPLY -->
+        <div id="tab-main" class="tab-content hidden space-y-4">
             <div class="bg-zinc-950 p-4 rounded-2xl border border-zinc-800 text-center space-y-3">
                 <div class="space-y-1">
                     <p class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Wsparcie twórczości</p>
@@ -85,7 +101,6 @@
                 </a>
             </div>
 
-            <!-- LINKI SPOŁECZNOŚCIOWE -->
             <div class="space-y-2.5">
                 <a href="https://www.youtube.com/@TuAdamix" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-zinc-800 hover:bg-zinc-750 font-medium text-sm rounded-xl border border-zinc-700/50 transition">
                     📺 YouTube Channel
@@ -93,26 +108,23 @@
                 <a href="https://www.tiktok.com/@tuadamix" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-zinc-800 hover:bg-zinc-750 font-medium text-sm rounded-xl border border-zinc-700/50 transition">
                     📱 TikTok Profile
                 </a>
-                <a href="https://discord.gg/p6ZrDMKWaY" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-semibold text-sm rounded-xl transition shadow-lg shadow-emerald-950/50">
-                    💬 Dołącz do Discorda
-                </a>
             </div>
-
         </div>
 
         <!-- 3. ZAKŁADKA: WKRÓTCE... -->
-        <div id="tab-soon" class="tab-content hidden space-y-4">
-            <div class="p-8 bg-zinc-950 rounded-2xl border border-zinc-800 text-center space-y-2">
-                <div class="text-3xl">🚀</div>
-                <h3 class="text-sm font-semibold text-zinc-200">Nowe projekty w przygotowaniu</h3>
-                <p class="text-xs text-zinc-400">Sekcja zostanie zaktualizowana niebawem.</p>
-            </div>
+        <div id="tab-soon" class="tab-content hidden p-8 text-center bg-zinc-950 rounded-2xl border border-zinc-800">
+            <p class="text-emerald-400 text-2xl font-bold mb-2">🚀 Wkrótce</p>
+            <p class="text-zinc-400 text-xs">Pracuję nad nowymi rzeczami!</p>
         </div>
 
     </div>
 
-    <!-- SKRYPT DO ZAKŁADEK -->
+    <!-- SKRYPTY JAVASCRIPT -->
     <script>
+        // TWÓJ PEŁNY LINK DO FIREBASE:
+        const FIREBASE_URL = "https://tuadamix-hub-default-rtdb.europe-west1.firebasedatabase.app";
+
+        // Przełączanie zakładek
         function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -120,6 +132,54 @@
             document.getElementById('tab-' + tabName).classList.remove('hidden');
             document.getElementById('btn-' + tabName).classList.add('active');
         }
+
+        // Obsługa wysyłania formularza do Firebase
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const contact = document.getElementById('contact').value;
+            const budget = document.getElementById('budget').value || "Nie podano";
+            const description = document.getElementById('description').value;
+            const statusEl = document.getElementById('formStatus');
+            const btn = document.getElementById('submitBtn');
+
+            // Generowanie unikalnego kodu ID (np. TA-4819)
+            const orderId = "TA-" + Math.floor(1000 + Math.random() * 9000);
+
+            btn.disabled = true;
+            btn.innerText = "Wysyłanie...";
+
+            const orderData = {
+                orderId: orderId,
+                contact: contact,
+                budget: budget,
+                description: description,
+                date: new Date().toLocaleString()
+            };
+
+            try {
+                // Zapis do bazy Firebase pod kluczem ID
+                const response = await fetch(`${FIREBASE_URL}/orders/${orderId}.json`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(orderData)
+                });
+
+                if (response.ok) {
+                    statusEl.innerHTML = `✅ Zamówienie przyjęte!<br>Twoje ID zamówienia: <b class="text-emerald-400 text-base font-mono">${orderId}</b><br><br>Dołącz na Discorda, otwórz Ticket i wklej ten kod!`;
+                    statusEl.className = "text-xs text-center font-semibold text-emerald-300 block bg-zinc-900 p-3 rounded-xl border border-emerald-500/30 space-y-1";
+                    document.getElementById('orderForm').reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                statusEl.innerHTML = `❌ Wystąpił błąd podczas wysyłania! Sprawdź połączenie.`;
+                statusEl.className = "text-xs text-center font-semibold text-red-400 block";
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "🚀 Wyślij Zamówienie";
+            }
+        });
     </script>
 </body>
 </html>
