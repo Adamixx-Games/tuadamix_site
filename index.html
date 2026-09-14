@@ -121,10 +121,8 @@
 
     <!-- SKRYPTY JAVASCRIPT -->
     <script>
-        // TWÓJ PEŁNY LINK DO FIREBASE:
         const FIREBASE_URL = "https://tuadamix-hub-default-rtdb.europe-west1.firebasedatabase.app";
 
-        // Przełączanie zakładek
         function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -133,7 +131,6 @@
             document.getElementById('btn-' + tabName).classList.add('active');
         }
 
-        // Obsługa wysyłania formularza do Firebase
         document.getElementById('orderForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -143,7 +140,6 @@
             const statusEl = document.getElementById('formStatus');
             const btn = document.getElementById('submitBtn');
 
-            // Generowanie unikalnego kodu ID (np. TA-4819)
             const orderId = "TA-" + Math.floor(1000 + Math.random() * 9000);
 
             btn.disabled = true;
@@ -158,7 +154,6 @@
             };
 
             try {
-                // Zapis do bazy Firebase pod kluczem ID
                 const response = await fetch(`${FIREBASE_URL}/orders/${orderId}.json`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
@@ -166,15 +161,27 @@
                 });
 
                 if (response.ok) {
-                    statusEl.innerHTML = `✅ Zamówienie przyjęte!<br>Twoje ID zamówienia: <b class="text-emerald-400 text-base font-mono">${orderId}</b><br><br>Dołącz na Discorda, otwórz Ticket i wklej ten kod!`;
-                    statusEl.className = "text-xs text-center font-semibold text-emerald-300 block bg-zinc-900 p-3 rounded-xl border border-emerald-500/30 space-y-1";
+                    statusEl.innerHTML = `
+                        <div class="space-y-3">
+                            <p class="text-white font-medium">✅ Zamówienie wysłane!</p>
+                            <p class="text-zinc-400">Twoje ID zamówienia:</p>
+                            <div class="text-emerald-400 text-lg font-mono font-bold bg-zinc-950 py-1.5 px-3 rounded-lg border border-emerald-500/30 inline-block">
+                                ${orderId}
+                            </div>
+                            <p class="text-zinc-400 text-[11px]">Skopiuj kod, otwórz zgłoszenie (ticket) na Discordzie i go tam wklej!</p>
+                            <a href="https://discord.gg/p6ZrDMKWaY" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 px-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition shadow-lg shadow-indigo-950/50">
+                                💬 Dołącz na Discorda
+                            </a>
+                        </div>
+                    `;
+                    statusEl.className = "text-xs text-center font-semibold text-emerald-300 block bg-zinc-950 p-4 rounded-2xl border border-emerald-500/30 space-y-2 mt-3";
                     document.getElementById('orderForm').reset();
                 } else {
                     throw new Error();
                 }
             } catch (err) {
                 statusEl.innerHTML = `❌ Wystąpił błąd podczas wysyłania! Sprawdź połączenie.`;
-                statusEl.className = "text-xs text-center font-semibold text-red-400 block";
+                statusEl.className = "text-xs text-center font-semibold text-red-400 block mt-2";
             } finally {
                 btn.disabled = false;
                 btn.innerText = "🚀 Wyślij Zamówienie";
