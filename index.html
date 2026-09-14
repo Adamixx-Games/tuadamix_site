@@ -39,13 +39,13 @@
             </button>
         </div>
 
-        <!-- 1. ZAKŁADKA: MINECRAFT (WIDOK GŁÓWNY) -->
+        <!-- 1. ZAKŁADKA: MINECRAFT -->
         <div id="tab-mc" class="tab-content space-y-4">
             
-            <!-- PRZYCISK PRZEJŚCIA DO KATEGORII GOTOWYCH SKRYPTÓW -->
-            <button onclick="showSubpage('ready-scripts')" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-bold text-sm text-white rounded-xl transition shadow-lg shadow-emerald-950/50">
+            <!-- PRZYCISK PRZEKIEROWUJĄCY DO PODSTRONY /skrypty -->
+            <a href="/skrypty" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-bold text-sm text-white rounded-xl transition shadow-lg shadow-emerald-950/50">
                 📜 Gotowe Skrypty
-            </button>
+            </a>
 
             <!-- OPIS OFERTY -->
             <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-2 text-left">
@@ -85,35 +85,6 @@
                     
                     <div id="formStatus" class="text-xs text-center font-semibold hidden"></div>
                 </form>
-            </div>
-        </div>
-
-        <!-- 1B. PODSTRONA: GOTOWE SKRYPTY (CAŁA ZAWARTOŚĆ STRONY) -->
-        <div id="subpage-ready-scripts" class="tab-content hidden space-y-4">
-            
-            <button onclick="showSubpage('tab-mc')" class="flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-white transition">
-                ⬅️ Wróć do formularza
-            </button>
-
-            <div class="p-5 bg-zinc-950 rounded-2xl border border-zinc-800 text-left space-y-2">
-                <h2 class="text-lg font-bold text-white">Gotowe skrypty</h2>
-                <p class="text-xs text-zinc-400">Gotowe skrypty do pluginu "Skript" w niskiej cenie</p>
-            </div>
-
-            <!-- LISTA SKRYPTÓW -->
-            <div class="space-y-3">
-                
-                <!-- Przykładowy skrypt #1 -->
-                <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs font-bold text-emerald-400">Skrypt na Serca (Lifesteal)</p>
-                        <p class="text-[11px] text-zinc-400">Cena: 5 PLN</p>
-                    </div>
-                    <a href="#" target="_blank" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition shadow-lg shadow-emerald-950/50">
-                        Pobierz
-                    </a>
-                </div>
-
             </div>
         </div>
 
@@ -161,11 +132,6 @@
 
             document.getElementById('tab-' + tabName).classList.remove('hidden');
             document.getElementById('btn-' + tabName).classList.add('active');
-        }
-
-        function showSubpage(subpageId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById(subpageId === 'ready-scripts' ? 'subpage-ready-scripts' : 'tab-mc').classList.remove('hidden');
         }
 
         document.getElementById('orderForm').addEventListener('submit', async function(e) {
