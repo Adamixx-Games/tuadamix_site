@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gotowe Skrypty | TuAdamix</title>
+    <title>TuAdamix | Gotowe Skrypty</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans flex items-center justify-center p-4">
@@ -12,38 +12,59 @@
         
         <!-- NAGŁÓWEK -->
         <div class="text-center space-y-2">
-            <div class="w-24 h-24 mx-auto mb-3 rounded-full border-2 border-emerald-400 p-1 flex items-center justify-center bg-zinc-950 shadow-lg shadow-emerald-500/20">
-                <span class="text-3xl font-black bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">TA</span>
+            <div class="w-16 h-16 mx-auto mb-2 rounded-2xl border border-emerald-500/30 bg-emerald-950/40 flex items-center justify-center text-2xl shadow-lg shadow-emerald-950/50">
+                📜
             </div>
-            <h1 class="text-2xl font-bold tracking-tight text-white">TuAdamix</h1>
-            <p class="text-zinc-400 text-sm">Minecraft Creator & Tech Enthusiast</p>
+            <h1 class="text-2xl font-bold tracking-tight text-white">Gotowe Skrypty</h1>
+            <p class="text-zinc-400 text-xs">Optymalne skrypty do pluginu Skript na Twój serwer Minecraft!</p>
         </div>
 
-        <!-- PRZYCISK POWROTU DO STRONY GŁÓWNEJ -->
-        <a href="/" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-zinc-800 hover:bg-zinc-750 font-semibold text-xs text-zinc-300 rounded-xl transition border border-zinc-700/50">
-            ⬅️ Wróć do strony głównej
+        <!-- PRZYCISK POWROTU -->
+        <a href="/index.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition bg-zinc-950 px-3 py-2 rounded-xl border border-zinc-800 w-full justify-center">
+            ← Powrót do Strony Głównej
         </a>
 
-        <!-- TYTUŁ I OPIS -->
-        <div class="p-5 bg-zinc-950 rounded-2xl border border-zinc-800 text-left space-y-1.5">
-            <h2 class="text-lg font-bold text-white">Gotowe skrypty</h2>
-            <p class="text-xs text-zinc-400">Gotowe skrypty do pluginu "Skript" w niskiej cenie</p>
-        </div>
-
-        <!-- LISTA SKRYPTÓW (TUTAJ DODAJESZ SWOJE PLIKI) -->
-        <div class="space-y-3">
+        <!-- LISTA SKRYPTÓW -->
+        <div class="space-y-4">
             
-            <!-- PRZYKŁAD SKRYPTU 1 -->
-            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 flex items-center justify-between">
-                <div>
-                    <p class="text-xs font-bold text-emerald-400">Skrypt na Serca (Lifesteal)</p>
-                    <p class="text-[11px] text-zinc-400">Cena: 5 PLN</p>
+            <!-- SKRYPT 1: LIFESTEAL -->
+            <div class="p-4 bg-zinc-950 rounded-2xl border border-zinc-800 space-y-3 text-left">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-sm font-bold text-emerald-400 flex items-center gap-1.5">
+                        ❤️ Skrypt na Serca (Lifesteal)
+                    </h2>
+                    <span class="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30 font-mono">5 PLN</span>
                 </div>
-                <a href="#" target="_blank" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition shadow-lg shadow-emerald-950/50">
-                    Pobierz
-                </a>
+                
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                    System kradzieży serc po zabójstwie gracza. Posiada możliwość tworzenia itemów odnawiających serca oraz wykluczania graczy przy 0 sercach.
+                </p>
+
+                <!-- SPECYFIKACJA KODU / KOMENDY -->
+                <div class="bg-zinc-900/80 p-2.5 rounded-xl border border-zinc-800/80 space-y-1 text-[11px] font-mono text-zinc-400">
+                    <p><span class="text-emerald-400 font-semibold">Komendy:</span> /dajserce, /serca</p>
+                    <p><span class="text-emerald-400 font-semibold">Wymagania:</span> Skript 2.6+</p>
+                </div>
+                
+                <div class="pt-2 border-t border-zinc-900 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-500 font-medium">Autor: TuAdamix</span>
+                    <a href="#" class="py-2 px-3 bg-emerald-600 hover:bg-emerald-500 font-bold text-xs text-white rounded-xl transition shadow-lg shadow-emerald-950/50 flex items-center gap-1">
+                        📥 Pobierz .SK
+                    </a>
+                </div>
             </div>
 
+            <!-- MIEJSCE NA KOLEJNY SKRYPT (PLACEHOLDER) -->
+            <div class="p-4 bg-zinc-950/50 rounded-2xl border border-zinc-800/50 border-dashed text-center space-y-1">
+                <p class="text-xs text-zinc-500 font-medium">⚙️ Kolejny skrypt w przygotowaniu...</p>
+                <p class="text-[10px] text-zinc-600">Zaglądaj regularnie lub zamów własny w zakładce zamówień!</p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER PODSTRONY -->
+        <div class="text-center pt-2">
+            <p class="text-[11px] text-zinc-600">TuAdamix Hub • System Skript</p>
         </div>
 
     </div>
